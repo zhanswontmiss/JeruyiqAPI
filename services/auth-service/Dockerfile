@@ -1,4 +1,4 @@
-# ---- Build Stage (Reduces Final Image Size) ----
+# ---- Build Stage ----
 FROM python:3.9-slim AS builder
 
 WORKDIR /app
@@ -21,7 +21,7 @@ COPY --from=builder /usr/local/bin/gunicorn /usr/local/bin/gunicorn
 COPY . .
 
 # Expose the correct port
-EXPOSE 5003
+EXPOSE 5001
 
-# Run Gunicorn instead of Flask's dev server
-CMD ["gunicorn", "-b", "0.0.0.0:5003", "app:app"]    
+# Run Gunicorn for production
+CMD ["gunicorn", "-b", "0.0.0.0:5001", "app:app"]    
