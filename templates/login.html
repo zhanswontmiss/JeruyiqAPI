@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login - Jeruyiq
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+<header class="absolute top-0 left-0 right-0 z-10">
+    <nav class="mx-[12rem] px-6 py-6 flex justify-between items-center">
+        <div class="navbar-logo md:flex space-x-8 items-center">
+            <a href="/" class="text-4xl font-bold w-[9rem] h-[3rem]">Jeruyıq</a>
+        </div>
+    </nav>
+</header>
+
+<div class="container" id="container">
+    <div class="form-container sign-up">
+        <form id="register-form">
+            <h1 style="color: var(--accent-color); font-size: 2rem;">Create Account</h1>
+            <div class="social-icons">
+                <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your personal data for registration</span>
+            <div class="name-inputs">
+                <input type="text" id="register-name" placeholder="Name" required>
+                <input type="text" id="register-surname" placeholder="Surname" required>
+            </div>
+            <input type="email" id="register-email" placeholder="Email" required>
+            <input type="password" id="register-password" placeholder="Password" required>
+            <input type="password" id="register-confirm-password" placeholder="Confirm Password" required>
+            <button type="submit" id="register-submit-btn">Sign Up</button>
+            <div id="register-error-message" style="color: red; margin-top: 10px;"></div>
+        </form>
+    </div>
+
+    <div class="form-container sign-in">
+        <form id="login-form">
+            <h1 style="color: var(--accent-color); font-size: 2rem;">Sign In</h1>
+            <div class="social-icons">
+                <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your email and password</span>
+            <input type="email" id="login-email" placeholder="Email">
+            <input type="password" id="login-password" placeholder="Password">
+            <a href="#" class="hover:text-[var(--accent-color)] transition-colors duration-300">Forgot your password?</a>
+            <button type="submit" id="login-submit-btn">Sign In</button>
+            <div id="login-error-message" style="color: red; margin-top: 10px;"></div>
+        </form>
+    </div>
+    <div class="toggle-container">
+        <div class="toggle">
+            <div class="toggle-panel toggle-left">
+                <h1>Hello, Friend!</h1>
+                <p>Register your personal data to use all of site features</p>
+                <button class="toggle-panel-btn" id="login">Sign In</button>
+            </div>
+            <div class="toggle-panel toggle-right">
+                <h1>Welcome back!</h1>
+                <p>Sign in with your email and password to enjoy all features</p>
+                <button class="toggle-panel-btn" id="register">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

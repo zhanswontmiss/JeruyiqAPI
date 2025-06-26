@@ -1,0 +1,80 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0a0a;
+    color: #f1f1f1;
+}
+.hero-video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    filter: brightness(0.4);
+}
+.hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.section-subtitle {
+    font-size: 1.125rem;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    color: #a0a0a0;
+}
+.card-hover-effect {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover-effect:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.2), 0 8px 10px -6px rgb(0 0 0 / 0.2);
+}
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.experience-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.culture-grid-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+}
+.culture-grid-item img {
+    transition: transform 0.4s ease;
+}
+.culture-grid-item:hover img {
+    transform: scale(1.05);
+}
+.culture-grid-item .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    padding: 1.5rem;
+    color: white;
+}
+/* Scroll reveal animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
